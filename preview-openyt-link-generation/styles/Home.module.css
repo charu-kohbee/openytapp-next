@@ -1,0 +1,119 @@
+.child1 {
+  padding: 0 2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+}
+.child2{
+  height:30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.child3{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.button1{
+  background-color: transparent;
+  border: transparent;
+  color: blue;
+  font-size: 15px;
+  display: flex;
+}
+.button1:hover{
+  background-color: skyblue;
+  border-color: black;
+  cursor: pointer;
+}
+.openyt{
+  font-size: 5vh;
+}
+.title {
+  font-size: 45px;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  /* display: inline-block;
+  vertical-align: top; */
+}
+.text {
+  color: #777;
+  font-size:20px;
+  white-space: nowrap;
+  padding: 0 2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.copyurl{
+  color: #777;
+  text-decoration: underline;
+  font-size: 15px;
+  padding: 0 2rem;
+  height: 100%;
+  width: 100%;
+  
+}
+.btn {
+  display: block;
+  width: 200px;
+  padding: 15px 0;
+  margin: 0px auto;
+  background: Black;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+}
+
+.content {
+  text-align: center;
+  height: 100%;
+}
+
+.urlarea {
+  border-radius: 4px;
+  display: block;
+  width: 250px;
+  padding: 15px 0;
+  margin: 10px auto;
+  border-width: 1px;
+}
+
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+  margin-bottom: 20px;
+}
+
+.header text {
+  position: relative;
+  top: 18px;
+  left: 10px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.header{
+  justify-content:center;
+}
+
+.everything {
+  margin: 0 auto;
+}
+
