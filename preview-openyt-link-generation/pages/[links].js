@@ -16,7 +16,7 @@ import { fetchDataAndOpenLink } from '../utils/fetchDataandOpenlinks'
 export async function getServerSideProps(context) {
    // const baseurl = "https://openyt.app";
   // const baseurl = "localhost:3000";
-   const baseurl = "openyt-nextapp/vercel.app";
+   const baseurl = "openytapp-next.vercel.app";
     let openyturl = `${baseurl}/${context.query.links}`;
     //console.log(openyturl);
     var id = '';

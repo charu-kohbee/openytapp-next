@@ -75,7 +75,7 @@ function isValidUrl(url) {
       const shortCode = nanoid(6);
      // const baseurl = "https://openyt.app";
      // const baseurl = "localhost:3000";
-      const baseurl = "openyt-nextapp/vercel.app";
+      const baseurl = "openytapp-next.vercel.app";
      // let openyturl = `${baseurl}/${context.query.links}`;
       const datadoc = {
         original_link : form.originalLink,
@@ -144,8 +144,8 @@ function isValidUrl(url) {
 
 <div className={styles.child1}>
         <div >
-          {/* <img src= '/Youtube_full-color.webp' width="60" height="40" /> */}
-          <Image src= '/Youtube_full-color.webp' alt="" width="60" height="40"/>
+          <img src= '/Youtube_full-color.webp' alt="" width="60" height="40" />
+          {/* <Image src= '/Youtube_full-color.webp' alt="" width="60" height="40"/> */}
           <text className={styles.title} > Open YT</text>
         </div>
         
