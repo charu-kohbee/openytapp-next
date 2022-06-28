@@ -1,7 +1,9 @@
 import { getDatabase, set} from '@firebase/database'
 import { ref } from "firebase/database";
 export async function createlogentry(websiteId, url) {
-    const baseurl = "openytapp-next.vercel.app";
+  //  const baseurl = "openytapp-next.vercel.app";
+  const baseurl = "https://openytapp-next.vercel.app";
+    //const baseurl = "localhost:3000";
     const db = getDatabase();
     const d = new Date();
     const shorturl = `${baseurl}/${websiteId}`;

@@ -74,8 +74,8 @@ function isValidUrl(url) {
       } 
       const shortCode = nanoid(6);
      // const baseurl = "https://openyt.app";
-     // const baseurl = "localhost:3000";
-      const baseurl = "openytapp-next.vercel.app";
+    //  const baseurl = "localhost:3000";
+      const baseurl = "https://openytapp-next.vercel.app";
      // let openyturl = `${baseurl}/${context.query.links}`;
       const datadoc = {
         original_link : form.originalLink,

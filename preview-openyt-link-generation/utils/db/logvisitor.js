@@ -5,7 +5,9 @@ export async function logVisitor(websiteId, userId, url) {
     const db = getDatabase();
     const d = new Date();
     const dbRef = ref(db);
-    const baseurl = "openytapp-next.vercel.app";
+    //const baseurl = "openytapp-next.vercel.app";
+    const baseurl = "https://openytapp-next.vercel.app";
+    //const baseurl = "localhost:3000";
     const shorturl = `${baseurl}/${websiteId}`;
     get(child(dbRef, `visitors/${websiteId}/visitor_list/${userId}`)).then((snapshot) => {
         if (snapshot.exists()) {

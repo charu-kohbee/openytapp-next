@@ -16,7 +16,7 @@ import { fetchDataAndOpenLink } from '../utils/fetchDataandOpenlinks'
 export async function getServerSideProps(context) {
    // const baseurl = "https://openyt.app";
   // const baseurl = "localhost:3000";
-   const baseurl = "openytapp-next.vercel.app";
+   const baseurl = "https://openytapp-next.vercel.app";
     let openyturl = `${baseurl}/${context.query.links}`;
     //console.log(openyturl);
     var id = '';
@@ -115,11 +115,17 @@ export async function getServerSideProps(context) {
     }
 }
 export default function OpenytId({ img_id, url, url_id, titl, description, isIos, isMobile }) {
-    //console.log(isMobile);
+    console.log(isMobile);
     const router = useRouter();
     useEffect(() => {
         if (isMobile) {
-            router.push("youtube://" + url_id);
+            if(isIos){
+                router.push("youtube://" + url_id);
+            }
+            else{
+                router.push("youtu.be/" + url_id);
+            }
+            
         } else {
             // Linking.openURL( url );
              router.push(url);
@@ -127,7 +133,13 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
     });
     function redirect_tolink() {
         if (isMobile) {
-            router.push("youtube://" + url_id);
+            if(isIos){
+                router.push("youtube://" + url_id);
+            }
+            else{
+                router.push("youtu.be/" + url_id);
+            }
+            
         } else {
             router.push(url);
         }
