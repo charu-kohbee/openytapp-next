@@ -115,10 +115,10 @@ export async function getServerSideProps(context) {
     }
 }
 export default function OpenytId({ img_id, url, url_id, titl, description, isIos, isMobile }) {
-    console.log(isMobile);
+    //console.log(isMobile);
     const router = useRouter();
     useEffect(() => {
-        if (isIos) {
+        if (isMobile) {
             router.push("youtube://" + url_id);
         } else {
             // Linking.openURL( url );
@@ -126,7 +126,7 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
         }
     });
     function redirect_tolink() {
-        if (isIos) {
+        if (isMobile) {
             router.push("youtube://" + url_id);
         } else {
             router.push(url);
