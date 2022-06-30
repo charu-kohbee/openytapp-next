@@ -58,6 +58,7 @@ export async function getServerSideProps(context) {
     var img = "https://i.ibb.co/Nmv77Yr/placeholder.png";
 
     var img_url, tit, descp, link;
+    var isChannel = false;
     if (url && (url.match('youtube.com/') || url.match('youtu.be/'))) {
         const api = await getapi(url);
         //console.log(api);
@@ -69,6 +70,7 @@ export async function getServerSideProps(context) {
                 descp = "";
                 tit = " ";
                 img_url = img;
+                isChannel = true;
             }
             else{
                 descp = data.items[0].snippet.description;
@@ -111,11 +113,12 @@ export async function getServerSideProps(context) {
             description: descp,
             isIos,
             isMobile,
+            isChannel,
         }
     }
 }
-export default function OpenytId({ img_id, url, url_id, titl, description, isIos, isMobile }) {
-    console.log(isMobile);
+export default function OpenytId({ img_id, url, url_id, titl, description, isIos, isMobile, isChannel }) {
+   // console.log(isMobile);
     const router = useRouter();
     useEffect(() => {
         if (isMobile) {
@@ -123,11 +126,19 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
                 router.push("youtube://" + url_id);
             }
             else{
-                router.push("youtu.be/" + url_id);
+                if(isChannel){
+                    window.location.assign("vnd.youtube://" + url_id);
+                }
+                else{
+                    url = "www.youtube.com/watch?v=" + url_id;
+                    window.location.assign("intent://" + url + "#Intent;scheme=https;end?sub_confirmation=1");
+                    //window.location.assign("intent://" + url + "/#Intent;scheme=https;S.browser_fallback_url="+url+";end;");
+                    //router.push("intent://" + url + "#Intent;scheme=https;end?sub_confirmation=1");
+                   // window.location.assign("vnd.youtube://www.youtube.com/watch?v=" + url_id);
+                }        
             }
             
         } else {
-            // Linking.openURL( url );
              router.push(url);
         }
     });
@@ -137,9 +148,16 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
                 router.push("youtube://" + url_id);
             }
             else{
-                router.push("youtu.be/" + url_id);
-            }
-            
+                if(isChannel){
+                    window.location.assign("vnd.youtube://" + url_id);
+                }
+                else{
+                    url = "www.youtube.com/watch?v=" + url_id;
+                    //window.location.assign("intent://" + url + "#Intent;scheme=https;end?sub_confirmation=1");
+                    //router.push("intent://" + url + "#Intent;scheme=https;end?sub_confirmation=1");
+                    window.location.assign("vnd.youtube://www.youtube.com/watch?v=" + url_id);
+                } 
+            }  
         } else {
             router.push(url);
         }
@@ -175,11 +193,15 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
                 </div>
                 <div className={styles.child2}>
                     <p style={{ fontSize: 15 }}>
-                        If not redirected
-                        <button onClick={redirect_tolink} className={styles.button1} > CLICK HERE</button>
+                        <button onClick={redirect_tolink} className={styles.button1} > IF NOT REDIRECTED CLICK HERE</button>
                     </p>
                 </div>
             </div>
         </>
     );
 }
+
+
+ // Linking
+// .openURL( 'vnd.youtube://user/channel/' + url_id )
+//document.body.addEventListener('click', () => console.log('clicked'));
