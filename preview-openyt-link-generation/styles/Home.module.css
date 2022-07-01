@@ -7,7 +7,9 @@
   flex-direction: column;
   align-items: center;
   white-space: nowrap;
+
 }
+
 .child2{
   height:30vh;
   width: 100%;
@@ -116,4 +118,3 @@
 .everything {
   margin: 0 auto;
 }
-

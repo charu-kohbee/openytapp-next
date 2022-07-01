@@ -15,9 +15,7 @@ import { IconButton, Snackbar } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { createlogentry } from '../utils/db/createlogentry';
 import Image from 'next/image'
-
-
-
+import About_info from '../Components/About_Info';
     
 export default function Home() {
   // const router = useRouter();
@@ -141,14 +139,15 @@ function isValidUrl(url) {
         </div>
         
         <div> */}
+      <body>
 
-<div className={styles.child1}>
+<div className={styles.child1} >
         <div >
           <img src= '/Youtube_full-color.webp' alt="" width="60" height="40" />
           {/* <Image src= '/Youtube_full-color.webp' alt="" width="60" height="40"/> */}
           <text className={styles.title} > Open YT</text>
         </div>
-        
+        <About_info/>
         <div>
 
         <br/> 
@@ -182,7 +181,7 @@ function isValidUrl(url) {
       </div>
       </div>
       
-      
+      </body>
     </>
   );
 }
