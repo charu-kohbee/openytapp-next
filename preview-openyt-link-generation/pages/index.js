@@ -195,7 +195,7 @@ function isValidUrl(url) {
         <StyledTextField 
         //  className={styles.textField} 
         
-        fullWidth value={form.originalLink} name="originalLink" onChange={handleChange} style={{marginBottom : "5px"}}  variant='outlined' label="Paste your youtube link here:"
+         value={form.originalLink} name="originalLink" onChange={handleChange} style={{marginBottom : "5px",  justifyContent: "center" }} fullWidth variant='outlined' label="Paste your youtube link here:"
         />
         
         

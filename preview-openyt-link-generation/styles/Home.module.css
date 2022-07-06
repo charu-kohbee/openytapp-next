@@ -76,7 +76,7 @@
   width: 100%;
   display: flex;
   text-align:right; 
-   justify-content: center;
+  justify-content: center;
   align-items: center;
   white-space: nowrap;
   background-color: #B8F2E3;
@@ -145,6 +145,10 @@
 .textField{
   border-color: aquamarine;
  margin-bottom: 10px;
+ display:flex;
+ justify-content:center;
+ border-color: black;
+ border-width: 20px;
 }
 
 .invalidtext{
