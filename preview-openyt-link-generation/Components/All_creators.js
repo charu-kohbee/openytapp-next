@@ -18,7 +18,7 @@ const All_creators = () => {
                 </div>
                 <div className={styles.happy_creators}>
                     <Image className={styles.hchimage} src='/instauser5.png' alt="" width="60" height="60" />
-                    <text> poojasharmaoficial</text>
+                    <text> poojasharma</text>
                 </div>
             </div>
             <div className={styles.row1}>
