@@ -68,7 +68,7 @@
 }
 .copyurl{
   color: black;
-  /* text-decoration:solid; */
+  text-decoration: underline;
   font-size: 15px;
   font-weight: 600;
   /* padding: 1px 1px; */

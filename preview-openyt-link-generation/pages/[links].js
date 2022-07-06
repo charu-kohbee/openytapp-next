@@ -59,6 +59,11 @@ export async function getServerSideProps(context) {
 
     var img_url, tit, descp, link;
     var isChannel = false;
+    var isShorts = false;
+    const rx1 = /^.*(?:(?:youtu\.be\/|shorts\/))([^#\&\?]*).*/;
+    if(url.match(rx1)){
+        isShorts = true;
+    }
     if (url && (url.match('youtube.com/') || url.match('youtu.be/'))) {
         const api = await getapi(url);
         //console.log(api);
@@ -66,7 +71,7 @@ export async function getServerSideProps(context) {
         const data = await data_from_api.json();
        //console.log(data);
         if (data.pageInfo["resultsPerPage"] != 0) {
-            if(api.match('forUsername')){
+            if(api.match('forUsername') || api.match('id=')){
                 descp = "";
                 tit = " ";
                 img_url = img;
@@ -114,10 +119,11 @@ export async function getServerSideProps(context) {
             isIos,
             isMobile,
             isChannel,
+            isShorts,
         }
     }
 }
-export default function OpenytId({ img_id, url, url_id, titl, description, isIos, isMobile, isChannel }) {
+export default function OpenytId({ img_id, url, url_id, titl, description, isIos, isMobile, isChannel, isShorts }) {
    // console.log(isMobile);
     const router = useRouter();
     useEffect(() => {
@@ -126,7 +132,7 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
                 router.push("youtube://" + url_id);
             }
             else{
-                if(isChannel){
+                if(isChannel || isShorts){
                     window.location.assign("vnd.youtube://" + url_id);
                 }
                 else{
@@ -148,7 +154,7 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
                 router.push("youtube://" + url_id);
             }
             else{
-                if(isChannel){
+                if(isChannel || isShorts){
                     window.location.assign("vnd.youtube://" + url_id);
                 }
                 else{
