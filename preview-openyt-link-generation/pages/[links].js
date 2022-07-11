@@ -175,8 +175,8 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <body>
-                <div>
-                    <div className={styles.redirection1}>
+                <div className={styles.redirection1}>
+                    <div >
                         <div>
                             <Image src={`/api/imagefetcher?url=${encodeURIComponent(img_id)}`} alt={titl} height={250} width={330} priority />
                         </div>
