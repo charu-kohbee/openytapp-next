@@ -166,7 +166,7 @@ export default function Home() {
               onClose={() => setOpen(false)}
               open={open}
             />
-            <label htmlFor="homepage" value="copyurl">{copyurl}</label>
+            <label onClick={CopyToClipboardButton} htmlFor="homepage" value="copyurl">{copyurl}</label>
           </div>
           {show && <label className={styles.tap_to_copy}>Tap to copy your OpenYT link</label>}
           <All_creators />

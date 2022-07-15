@@ -58,7 +58,7 @@ export async function getServerSideProps(context) {
         const data_from_api = await fetch(api);
         const data = await data_from_api.json();
         if (data.pageInfo["resultsPerPage"] != 0) {
-            if (api.match('forUsername') || api.match('id=')) {
+            if (api.match('/channels')) {
                 descp = "";
                 tit = " ";
                 img_url = img;
@@ -85,7 +85,6 @@ export async function getServerSideProps(context) {
         descp = "Please provide a valid url";
         url = "https://youtube.com/watch?v=";
     }
-
     var uaString = context.req.headers['user-agent'];
     let ua;
     if (uaString) {
@@ -180,11 +179,14 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
                         <div>
                             <Image src={`/api/imagefetcher?url=${encodeURIComponent(img_id)}`} alt={titl} height={250} width={330} priority />
                         </div>
-                        <ReactLoading type={"bubbles"} color={"#9E9E9E"} height={50} width={100} delay={0.3} />
+                        <div className={styles.reactloading}>
+                        <ReactLoading  type={"bubbles"} color={"#9E9E9E"} height={50} width={100} delay={0.3} />
                         <div className={styles.child3}>
                             <PlayArrow style={{ color: "#1D797E", fontSize: 60 }} />
                             <h1 className={styles.openyt}>Open YT</h1>
                         </div>
+                        </div>
+                      
                     </div>
                     <div className={styles.child2}>
                         <p style={{ fontSize: 15 }}>

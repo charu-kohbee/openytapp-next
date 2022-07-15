@@ -15,7 +15,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 70vh;
+  height: 100vh;
   width: 100%;
 }
 .child2{
@@ -28,12 +28,20 @@
   
 }
 .child3{
-  width: 40%;
-  /* display: flex;
+  /* width: 40%; */
+  display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
+  /* background-color: aqua; */
 
+}
+.reactloading{
+  /* background-color: blueviolet; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .button1{
   background-color: transparent;
@@ -50,6 +58,7 @@
 .openyt{
   font-size: 5vh;
   white-space: nowrap;
+  margin-top: 28px;
 
 }
 .title {
@@ -222,7 +231,7 @@
   display: flex;
   justify-content: center;
   color:#C0C0C0;
-  font-size:8px;
+  font-size:12px;
 }
 
 /* 
@@ -337,4 +346,11 @@
     margin-bottom: 8px;
     
   }
+  .tap_to_copy{
+    display: flex;
+    justify-content: center;
+    color:#C0C0C0;
+    font-size:9px;
+  }
+  
 }
