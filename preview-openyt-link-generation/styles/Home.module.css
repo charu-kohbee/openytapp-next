@@ -59,6 +59,7 @@
   font-size: 5vh;
   white-space: nowrap;
   margin-top: 28px;
+  
 
 }
 .title {
@@ -71,6 +72,7 @@
   white-space: nowrap;
   align-items:flex-start;
   justify-content:flex-start;
+  padding: 8px 0px 0px 12px;
   /* display: inline-block;
   vertical-align: top; */
 }
@@ -93,7 +95,7 @@
   font-weight: 600;
   /* padding: 1px 1px; */
   height: 100%;
-  width: 30vw;
+  /* width: 30vw; */
   display: flex;
   text-align:right; 
   justify-content: center;
@@ -102,6 +104,7 @@
   background-color: #B8F2E3;
   border-radius: 3px;
   margin-bottom: 8px;
+  padding: 0px 8px 0px 0px;
   
 }
 .btn {
@@ -335,15 +338,16 @@
     font-weight: 600;
     /* padding: 1px 1px; */
     height: 100%;
-    width: 85vw;
+    /* width: 95vw; */
     display: flex;
     text-align:right; 
     justify-content: center;
     align-items: center;
     white-space: nowrap;
     background-color: #B8F2E3;
-    border-radius: 3px;
+    border-radius: 4px;
     margin-bottom: 8px;
+    padding: 0px 8px 0px 0px;
     
   }
   .tap_to_copy{

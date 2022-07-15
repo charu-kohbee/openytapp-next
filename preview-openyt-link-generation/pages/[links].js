@@ -174,19 +174,22 @@ export default function OpenytId({ img_id, url, url_id, titl, description, isIos
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <body>
+                <div >
+                    <text className={styles.title} > OpenYT</text>
+                </div>
                 <div className={styles.redirection1}>
                     <div >
                         <div>
                             <Image src={`/api/imagefetcher?url=${encodeURIComponent(img_id)}`} alt={titl} height={250} width={330} priority />
                         </div>
                         <div className={styles.reactloading}>
-                        <ReactLoading  type={"bubbles"} color={"#9E9E9E"} height={50} width={100} delay={0.3} />
-                        <div className={styles.child3}>
-                            <PlayArrow style={{ color: "#1D797E", fontSize: 60 }} />
-                            <h1 className={styles.openyt}>Open YT</h1>
+                            <ReactLoading type={"bubbles"} color={"#9E9E9E"} height={50} width={100} delay={0.3} />
+                            {/* <div className={styles.child3}>
+                                <PlayArrow style={{ color: "#1D797E", fontSize: 60 }} />
+                                <h1 className={styles.openyt}>Open YT</h1>
+                            </div> */}
                         </div>
-                        </div>
-                      
+
                     </div>
                     <div className={styles.child2}>
                         <p style={{ fontSize: 15 }}>
